@@ -21,7 +21,7 @@ export default function ResultsPage() {
   useEffect(() => {
     // Load results from Firebase
     getAnalyticsSummary((data) => {
-      if (data && data.matches) {
+      if (data && data.matches && data.matches.length > 0) {
         const firebaseResults = data.matches.map((match: any) => ({
           porscheId: match.porscheId,
           porscheName: match.porscheName,
@@ -30,6 +30,16 @@ export default function ResultsPage() {
           id: match.id
         }));
         setResults(firebaseResults);
+      } else {
+        // Fallback to localStorage if Firebase fails
+        const stored = localStorage.getItem('pf-results');
+        if (stored) {
+          try {
+            setResults(JSON.parse(stored));
+          } catch (e) {
+            console.error('Error loading results:', e);
+          }
+        }
       }
       setLoading(false);
     });

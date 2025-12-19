@@ -1,7 +1,7 @@
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, push, onValue, remove } from 'firebase/database';
+import { initializeApp, FirebaseApp } from 'firebase/app';
+import { getDatabase, ref, push, onValue, Database } from 'firebase/database';
 
-// Firebase configuration - Replace with your Firebase config
+// Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -12,12 +12,26 @@ const firebaseConfig = {
   databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
 };
 
-// Initialize Firebase
-let db: any = null;
-if (typeof window !== 'undefined') {
-  const app = initializeApp(firebaseConfig);
-  db = getDatabase(app);
-}
+// Initialize Firebase safely
+let db: Database | null = null;
+let firebaseApp: FirebaseApp | null = null;
+
+const initializeFirebase = () => {
+  if (typeof window === 'undefined' || db) return db;
+
+  try {
+    if (!firebaseApp) {
+      firebaseApp = initializeApp(firebaseConfig);
+    }
+    if (!db) {
+      db = getDatabase(firebaseApp);
+    }
+    return db;
+  } catch (error) {
+    console.error('Firebase initialization error:', error);
+    return null;
+  }
+};
 
 // Analytics utility for tracking user interactions
 export type AnalyticsEvent = {
@@ -91,10 +105,16 @@ export const trackPageView = (pageTitle: string, pagePath: string) => {
 export const trackPorscheMatch = async (porscheId: string, porscheName: string, userName?: string) => {
   trackEvent('porsche_matched', 'engagement', porscheName, 1);
   
-  if (typeof window === 'undefined' || !db) return;
+  if (typeof window === 'undefined') return;
   
   try {
-    const matchRef = ref(db, 'matches');
+    const database = initializeFirebase();
+    if (!database) {
+      console.warn('Firebase database not initialized');
+      return;
+    }
+    
+    const matchRef = ref(database, 'matches');
     await push(matchRef, {
       porscheId,
       porscheName,
@@ -108,13 +128,20 @@ export const trackPorscheMatch = async (porscheId: string, porscheName: string, 
 
 // Get analytics summary from Firebase
 export const getAnalyticsSummary = (callback: (data: any) => void) => {
-  if (typeof window === 'undefined' || !db) {
+  if (typeof window === 'undefined') {
     callback(null);
     return;
   }
 
   try {
-    const matchRef = ref(db, 'matches');
+    const database = initializeFirebase();
+    if (!database) {
+      console.warn('Firebase database not initialized');
+      callback(null);
+      return;
+    }
+
+    const matchRef = ref(database, 'matches');
     onValue(matchRef, (snapshot) => {
       const matches: Match[] = [];
       if (snapshot.exists()) {
