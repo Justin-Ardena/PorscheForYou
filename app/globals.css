@@ -133,6 +133,8 @@ main::before {
 	text-decoration: none;
 	transition: var(--transition-smooth);
 	white-space: nowrap;
+	flex-shrink: 0;
+	order: -1;
 }
 
 .navbar-logo:hover {
@@ -140,11 +142,12 @@ main::before {
 }
 
 .logo-image {
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
 	object-fit: contain;
 	filter: drop-shadow(0 2px 8px rgba(239, 43, 45, 0.2));
 	transition: all 0.3s ease;
+	flex-shrink: 0;
 }
 
 .navbar-logo:hover .logo-image {

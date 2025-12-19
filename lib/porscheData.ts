@@ -18,7 +18,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'The ultimate performance machine. Aggressive, powerful, and designed for those who demand the best.',
     personality: 'Ambitious Racer',
-    image: '/image/gt3.jpeg',
+    image: '/gt3.jpeg',
     color: '#ef2b2d',
     traits: ['Performance', 'Power', 'Aggressive', 'Luxury']
   },
@@ -29,7 +29,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'The purist\'s choice. Mid-engine agility meets precision handling for the true driving enthusiast.',
     personality: 'Technical Perfectionist',
-    image: '/image/718.jpg',
+    image: '/718.jpg',
     color: '#f0e68c',
     traits: ['Precision', 'Handling', 'Agile', 'Technical']
   },
@@ -40,7 +40,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'The future is electric. Cutting-edge technology meets Porsche performance in an innovative package.',
     personality: 'Tech Visionary',
-    image: '/image/taycan.jpg',
+    image: '/taycan.jpg',
     color: '#1e90ff',
     traits: ['Innovation', 'Technology', 'Electric', 'Futuristic']
   },
@@ -51,7 +51,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'Elegance meets performance. A practical luxury sedan that doesn\'t compromise on speed or style.',
     personality: 'Executive Sophisticate',
-    image: '/image/panamera.jpg',
+    image: '/panamera.jpg',
     color: '#2f4f4f',
     traits: ['Luxury', 'Practical', 'Sophisticated', 'Powerful']
   },
@@ -62,7 +62,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'Sporty SUV for the adventurous. Combines capability with performance for those who want it all.',
     personality: 'Adventure Seeker',
-    image: '/image/macan.jpg',
+    image: '/macan.jpg',
     color: '#ff6347',
     traits: ['Versatile', 'Sporty', 'Capable', 'Adventurous']
   },
@@ -73,7 +73,7 @@ export const porsches: Porsche[] = [
     year: '2015-2018',
     description: 'The rarest gem. A limited-edition hybrid hypercar representing the pinnacle of Porsche engineering.',
     personality: 'Elite Collector',
-    image: '/image/918.jpg',
+    image: '/918.jpg',
     color: '#ffd700',
     traits: ['Rare', 'Hybrid', 'Elite', 'Hypercar']
   },
@@ -84,7 +84,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'Pure joy of driving. Open-air thrills with accessible performance and genuine driving pleasure.',
     personality: 'Free Spirit',
-    image: '/image/boxster.jpg',
+    image: '/boxster.jpg',
     color: '#32cd32',
     traits: ['Open-Air', 'Fun', 'Accessible', 'Spirited']
   },
@@ -95,7 +95,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'Adventure redefined. An off-road capable 911 for those who want to explore beyond the asphalt.',
     personality: 'Bold Explorer',
-    image: '/image/dakar.jpg',
+    image: '/dakar.jpg',
     color: '#ff8c00',
     traits: ['Off-Road', 'Bold', 'Explorer', 'Unique']
   },
@@ -106,7 +106,7 @@ export const porsches: Porsche[] = [
     year: '2003-2011',
     description: 'A legend reborn. The ultimate expression of Porsche\'s racing heritage and engineering excellence.',
     personality: 'Classic Champion',
-    image: '/image/carrera.jpg',
+    image: '/carrera.jpg',
     color: '#dc143c',
     traits: ['Legend', 'Racing', 'Heritage', 'Champion']
   },
@@ -117,7 +117,7 @@ export const porsches: Porsche[] = [
     year: '2024',
     description: 'Smart luxury with an electric edge. Eco-conscious performance for the modern driver.',
     personality: 'Conscious Innovator',
-    image: '/image/cayenne.jpg',
+    image: '/cayenne.jpg',
     color: '#20b2aa',
     traits: ['Eco-Friendly', 'Hybrid', 'Luxury', 'Smart']
   }

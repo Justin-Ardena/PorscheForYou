@@ -13,7 +13,7 @@ export default function Footer() {
                         marginBottom: '1rem'
                     }}>
                         <img 
-                            src="/image/icon.png" 
+                            src="/icon.png" 
                             alt="PorscheForYou Logo" 
                             className="logo-image"
                             style={{
