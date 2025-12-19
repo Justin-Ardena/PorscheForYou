@@ -38,6 +38,13 @@ export const trackEvent = (
   localStorage.setItem('pf-analytics-events', JSON.stringify(events));
 
   // Send to Google Analytics if available
+  if (typeof gtag !== 'undefined') {
+    gtag('event', eventName, {
+      event_category: eventCategory,
+      event_label: eventLabel,
+      value: eventValue,
+    });
+  }
 };
 
 // Track page views
@@ -56,6 +63,12 @@ export const trackPageView = (pageTitle: string, pagePath: string) => {
   localStorage.setItem('pf-analytics-pageviews', JSON.stringify(pageViews));
 
   // Send to Google Analytics
+  if (typeof gtag !== 'undefined') {
+    gtag('config', process.env.NEXT_PUBLIC_GA_ID || '', {
+      page_path: pagePath,
+      page_title: pageTitle,
+    });
+  }
 };
 
 // Track Porsche match
