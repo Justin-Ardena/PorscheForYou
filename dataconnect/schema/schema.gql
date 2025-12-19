@@ -1,0 +1,30 @@
+type User @table {
+  firebaseUid: String!
+  createdAt: Timestamp!
+  email: String
+  displayName: String
+}
+
+type BodyType @table {
+  name: String!
+}
+
+type Model @table {
+  name: String!
+  year: Int!
+  bodyType: BodyType!
+  createdAt: Timestamp!
+  description: String
+  imageUrl: String
+  engineType: String
+  horsepower: Int
+  torque: Int
+  topSpeed: Int
+  zeroToSixty: Float
+}
+
+type Favorite @table(key: ["user", "model"]) {
+  user: User!
+  model: Model!
+  createdAt: Timestamp!
+}

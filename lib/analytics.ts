@@ -1,3 +1,24 @@
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, push, onValue, remove } from 'firebase/database';
+
+// Firebase configuration - Replace with your Firebase config
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+};
+
+// Initialize Firebase
+let db: any = null;
+if (typeof window !== 'undefined') {
+  const app = initializeApp(firebaseConfig);
+  db = getDatabase(app);
+}
+
 // Analytics utility for tracking user interactions
 export type AnalyticsEvent = {
   eventName: string;
@@ -12,6 +33,14 @@ export type PageView = {
   pageTitle: string;
   pagePath: string;
   timestamp: string;
+};
+
+export type Match = {
+  id?: string | null;
+  porscheId?: string;
+  porscheName?: string;
+  userName?: string;
+  timestamp?: string;
 };
 
 // Store analytics events in localStorage
@@ -59,37 +88,61 @@ export const trackPageView = (pageTitle: string, pagePath: string) => {
 };
 
 // Track Porsche match
-export const trackPorscheMatch = (porscheId: string, porscheName: string, userName?: string) => {
+export const trackPorscheMatch = async (porscheId: string, porscheName: string, userName?: string) => {
   trackEvent('porsche_matched', 'engagement', porscheName, 1);
   
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || !db) return;
   
-  const matches = JSON.parse(localStorage.getItem('pf-analytics-matches') || '[]');
-  matches.push({
-    porscheId,
-    porscheName,
-    userName: userName || 'Anonymous',
-    timestamp: new Date().toISOString(),
-  });
-  localStorage.setItem('pf-analytics-matches', JSON.stringify(matches));
+  try {
+    const matchRef = ref(db, 'matches');
+    await push(matchRef, {
+      porscheId,
+      porscheName,
+      userName: userName || 'Anonymous',
+      timestamp: new Date().toISOString(),
+    });
+  } catch (error) {
+    console.error('Error saving match to Firebase:', error);
+  }
 };
 
-// Get analytics summary
-export const getAnalyticsSummary = () => {
-  if (typeof window === 'undefined') return null;
+// Get analytics summary from Firebase
+export const getAnalyticsSummary = (callback: (data: any) => void) => {
+  if (typeof window === 'undefined' || !db) {
+    callback(null);
+    return;
+  }
 
-  const events = JSON.parse(localStorage.getItem('pf-analytics-events') || '[]');
-  const pageViews = JSON.parse(localStorage.getItem('pf-analytics-pageviews') || '[]');
-  const matches = JSON.parse(localStorage.getItem('pf-analytics-matches') || '[]');
+  try {
+    const matchRef = ref(db, 'matches');
+    onValue(matchRef, (snapshot) => {
+      const matches: Match[] = [];
+      if (snapshot.exists()) {
+        snapshot.forEach((childSnapshot) => {
+          const val = childSnapshot.val();
+          matches.push({
+            id: childSnapshot.key,
+            ...(val as Match),
+          });
+        });
+      }
 
-  return {
-    totalEvents: events.length,
-    totalPageViews: pageViews.length,
-    totalMatches: matches.length,
-    events,
-    pageViews,
-    matches,
-  };
+      const events = JSON.parse(localStorage.getItem('pf-analytics-events') || '[]');
+      const pageViews = JSON.parse(localStorage.getItem('pf-analytics-pageviews') || '[]');
+
+      callback({
+        totalEvents: events.length,
+        totalPageViews: pageViews.length,
+        totalMatches: matches.length,
+        events,
+        pageViews,
+        matches,
+      });
+    });
+  } catch (error) {
+    console.error('Error fetching analytics from Firebase:', error);
+    callback(null);
+  }
 };
 
 // Clear analytics data

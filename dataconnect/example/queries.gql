@@ -1,0 +1,34 @@
+mutation CreateUser @auth(level: USER) {
+  user_insert(data: {
+    firebaseUid_expr: "auth.uid",
+    createdAt_expr: "request.time",
+  })
+}
+
+query ListModels @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  models {
+    id
+    name
+    year
+    imageUrl
+  }
+}
+
+mutation AddFavorite($modelId: UUID!) @auth(level: USER) {
+  favorite_insert(data: {
+    userId_expr: "auth.uid",
+    modelId: $modelId,
+    createdAt_expr: "request.time"
+  })
+}
+
+query GetFavorites @auth(level: USER) {
+  favorites(where: {userId: {eq_expr: "auth.uid"}}) {
+    model {
+      id
+      name
+      year
+      imageUrl
+    }
+  }
+}
