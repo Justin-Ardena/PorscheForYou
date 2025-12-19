@@ -1,0 +1,86 @@
+2025-11-28T02:00:26.762110Z  INFO tailwindcss_oxide::scanner: Provided sources:
+2025-11-28T02:00:26.762402Z  INFO tailwindcss_oxide::scanner: Source: PublicSourceEntry { base: "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena", pattern: "**/*", negated: false }
+2025-11-28T02:00:26.762934Z  INFO tailwindcss_oxide::scanner: Optimized sources:
+2025-11-28T02:00:26.762967Z  INFO tailwindcss_oxide::scanner: Source: Auto { base: "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena" }
+2025-11-28T02:00:26.765694Z  INFO scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.768478Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app"
+2025-11-28T02:00:26.770878Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\about"
+2025-11-28T02:00:26.771088Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\about\\page.js"
+2025-11-28T02:00:26.771252Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\components"
+2025-11-28T02:00:26.771399Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\components\\footer.js"
+2025-11-28T02:00:26.771467Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\components\\header.js"
+2025-11-28T02:00:26.771588Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\contact"
+2025-11-28T02:00:26.771716Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\contact\\page.js"
+2025-11-28T02:00:26.771814Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\globals.css"
+2025-11-28T02:00:26.771881Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\layout.tsx"
+2025-11-28T02:00:26.771946Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\netlify.toml"
+2025-11-28T02:00:26.772010Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\page.tsx"
+2025-11-28T02:00:26.772105Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\eslint.config.mjs"
+2025-11-28T02:00:26.772185Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\next.config.ts"
+2025-11-28T02:00:26.772420Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\package.json"
+2025-11-28T02:00:26.772478Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\postcss.config.mjs"
+2025-11-28T02:00:26.772575Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public"
+2025-11-28T02:00:26.772709Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\file.svg"
+2025-11-28T02:00:26.772770Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\globe.svg"
+2025-11-28T02:00:26.772865Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\image"
+2025-11-28T02:00:26.773023Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\next.svg"
+2025-11-28T02:00:26.773087Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\vercel.svg"
+2025-11-28T02:00:26.773159Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\window.svg"
+2025-11-28T02:00:26.773318Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\README.md"
+2025-11-28T02:00:26.773398Z  INFO scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\tsconfig.json"
+2025-11-28T02:00:26.773498Z  INFO scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.773509Z  INFO extract_candidates: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.773517Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.773522Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 18 file(s)
+2025-11-28T02:00:26.774226Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\package.json"
+2025-11-28T02:00:26.774367Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\postcss.config.mjs"
+2025-11-28T02:00:26.774492Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\file.svg"
+2025-11-28T02:00:26.774590Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\globe.svg"
+2025-11-28T02:00:26.774689Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\next.svg"
+2025-11-28T02:00:26.774781Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\vercel.svg"
+2025-11-28T02:00:26.774866Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\window.svg"
+2025-11-28T02:00:26.774950Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\README.md"
+2025-11-28T02:00:26.775027Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\tsconfig.json"
+2025-11-28T02:00:26.775106Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\layout.tsx"
+2025-11-28T02:00:26.775197Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\netlify.toml"
+2025-11-28T02:00:26.775267Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\page.tsx"
+2025-11-28T02:00:26.775350Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\eslint.config.mjs"
+2025-11-28T02:00:26.775456Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\next.config.ts"
+2025-11-28T02:00:26.775540Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\components\\header.js"
+2025-11-28T02:00:26.775623Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\contact\\page.js"
+2025-11-28T02:00:26.775699Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\components\\footer.js"
+2025-11-28T02:00:26.775720Z  INFO tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\about\\page.js"
+2025-11-28T02:00:26.775792Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.775808Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.775816Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.776623Z  INFO extract_candidates:parse_all_blobs:extract: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.776653Z  INFO extract_candidates:parse_all_blobs: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.776663Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.776669Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading 1 file(s)
+2025-11-28T02:00:26.776830Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: Reading "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\globals.css"
+2025-11-28T02:00:26.776906Z  INFO extract_candidates:read_all_files: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.776923Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.776931Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.777020Z  INFO extract_candidates:extract_css_variables:extract: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.777037Z  INFO extract_candidates:extract_css_variables: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.777259Z  INFO extract_candidates: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.777666Z  INFO get_files: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.777679Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.779735Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app"
+2025-11-28T02:00:26.779927Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\about"
+2025-11-28T02:00:26.780213Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\components"
+2025-11-28T02:00:26.780481Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\contact"
+2025-11-28T02:00:26.781170Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public"
+2025-11-28T02:00:26.781400Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\image"
+2025-11-28T02:00:26.781778Z  INFO get_files:scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.783095Z  INFO get_files: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.783387Z  INFO get_globs: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.783401Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: enter
+2025-11-28T02:00:26.785666Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app"
+2025-11-28T02:00:26.785927Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\about"
+2025-11-28T02:00:26.786249Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\components"
+2025-11-28T02:00:26.786664Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\app\\contact"
+2025-11-28T02:00:26.787721Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public"
+2025-11-28T02:00:26.788040Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: Discovering "C:\\Users\\Justin Ace Ardena\\Desktop\\my-ardena\\public\\image"
+2025-11-28T02:00:26.788605Z  INFO get_globs:scan_sources: tailwindcss_oxide::scanner: exit
+2025-11-28T02:00:26.796585Z  INFO get_globs: tailwindcss_oxide::scanner: exit

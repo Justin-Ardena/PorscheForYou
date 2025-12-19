@@ -1,0 +1,10 @@
+# Disable Blob Storage (Fix for CLI deploy error)
+[blobs]
+    enabled = false
+
+[build]
+    command = "npm run build"
+    publish = "out"
+
+[[plugins]]
+    package = "@netlify/plugin-nextjs"
