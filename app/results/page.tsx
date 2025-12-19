@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { porsches } from '@/lib/porscheData';
-import { trackEvent } from '@/lib/analytics';
+import { trackEvent, getAnalyticsSummary } from '@/lib/analytics';
 import { BarChart, PieChart, LineChart } from '@/lib/charts';
 
 interface UserResult {
@@ -11,6 +11,7 @@ interface UserResult {
   porscheName: string;
   timestamp: string;
   userName?: string;
+  id?: string;
 }
 
 export default function ResultsPage() {
@@ -18,16 +19,20 @@ export default function ResultsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load results from localStorage
-    const stored = localStorage.getItem('pf-results');
-    if (stored) {
-      try {
-        setResults(JSON.parse(stored));
-      } catch (e) {
-        console.error('Error loading results:', e);
+    // Load results from Firebase
+    getAnalyticsSummary((data) => {
+      if (data && data.matches) {
+        const firebaseResults = data.matches.map((match: any) => ({
+          porscheId: match.porscheId,
+          porscheName: match.porscheName,
+          userName: match.userName,
+          timestamp: match.timestamp,
+          id: match.id
+        }));
+        setResults(firebaseResults);
       }
-    }
-    setLoading(false);
+      setLoading(false);
+    });
   }, []);
 
   // Count matches
