@@ -46,7 +46,7 @@ export default function ResultPage({ params }: PageProps) {
           color: porsche.color,
           animation: 'slideInRight 0.6s ease-out'
         }}>
-          🎉 Perfect Match Found!
+          Perfect Match Found!
         </h1>
         {userName && (
           <p style={{

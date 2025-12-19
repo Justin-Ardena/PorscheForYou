@@ -10,7 +10,7 @@ export default function Header() {
         <header className="navbar-header">
             <div className="navbar-container">
                 <Link href="/" className="navbar-logo">
-                    <img src="/image/icon.png" alt="PorscheForYou Logo" className="logo-image" />  
+                    <img src="/icon.png" alt="PorscheForYou Logo" className="logo-image" />  
                     <span className="logo-text">PorscheForYou</span>
                 </Link>
 
